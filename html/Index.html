@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+    <head>
+        <title>Hello World!</title>
+        <style>
+            /* CSS Comment */
+
+            /* 1. tag name */
+            header {
+                color: #ff0000;
+                font-size: 20px;
+            }
+            /* 2. Select all(Wildcard) */
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            /* 3. ID Selector */
+            #foot {
+                background-color: black;
+                color: white;
+            }
+            /* 4. Class Selector */
+            .art {
+                font-size: 30px;
+                color: green;
+            }
+            /* 5. Parent&Child */
+            ol > li {
+                color: yellow;
+            }
+            p b {
+                color:gray;
+            }
+        </style>
+    </head>
+    <body style="margine-bottom: 1000px;">
+        <!-- 시맨틱 태그 -->
+        <header id="header">Header</header>
+        <nav style="color: blue;">nav</nav>
+        <aside>aside</aside>
+        <section>
+            section
+            <article class="art">article1</article>
+            <article class="art">article2</article>
+            <article class="art">article3</article>
+        </section>
+
+        <footer id="foot">footer</footer>
+
+        <!-- Non 시맨틱 태그-->
+        <div>
+            div
+        </div>
+
+        <h1>Hi, there!</h1>
+        <h2>Hi, there!</h2>
+        <h3>Hi, there!</h3>
+        <h4>Hi, there!</h4>
+        <h5>Hi, there!</h5>
+        <h6>Hi, there!</h6>
+
+    <!-- -->
+    <p>
+        본문1<br>
+        본문4<hr>
+    </p>
+    <p>본문2</p>
+    <p>본문3</p>
+
+    <!-- 글자 꾸미기-->
+    <p>
+        이 글씨는 <b>굵은 글씨</b>입니다. <br>
+        이 글씨는 <strong>굵은 글씨</strong>입니다. <br>
+    </p>
+    <p>
+        이 글씨는 <i>기울어진 글씨</i>입니다. <br>
+        이 글씨는 <em>기울어진 글씨</em>입니다. <br>
+    </p>
+    <p>
+        이 글씨는 <del>취소선</del>입니다. <br>
+    </p>
+    <p>
+        이 글씨는 <b><i>굵고 기울어진 글씨</i></b>입니다. <br>
+    </p>
+
+    <!-- 목록 -->
+    <ol>
+        <li>첫 번째</li>
+        <li>두 번째</li>
+        <li>세 번째</li>
+    </ol>
+    <!-- 순서가 없는 목록 -->
+    <ul style="list-style-type: square;">
+        <li>Chiken</li>
+        <li>Pizza</li>
+        <li>Hamburger</li>
+    </ul>
+
+    <!-- 링크 태그-->
+    <a href="https://google.com" target="_blank">구글로 가자!</a>
+    <a href="Index2.html">Index 2로 가자</a>
+    <a href="#header">header로 가자</a>
+    <a href="mailto:my702@naver.com">메일 쓰기</a>
+
+    <!-- 미디어 파일 -->
+    <!-- 사진 -->
+        <img src="Picachu.png" alt="피카츄" width="100px" height="100px">
+
+    <!-- 비디오 -->
+        <video src=""></video>
+    <!-- iframe -->
+    <iframe width = "560" height="315" src="https://www.youtube.com/embed/DyDfgMOUjCI"></iframe>
+    
+    <!-- form -->
+    <form action="">
+        <input type="text">
+        <input type="password">
+        <input type="submit">
+    </form>
+
+    </body>
+</html>

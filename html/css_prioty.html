@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 6. 상위 객체에 의해 상속된 속성 */
+        div {
+            color: red;
+        }
+        /* 5. 태그명으로 지정한 속성 */
+        h1 {
+            color: blue;
+        }
+        /* 4. 클래스명으로 지정한 속성 */
+        .hello {
+            color: brown;
+        }
+        /* 3. ID로 지정한 속성 */
+        #mulcam {
+            color: yellow;
+        }
+        /* 2. HTML에서 style을 직접 지정한 속성 */
+        /* 1. 속성값 뒤에 !important를 붙인 속성 */
+        h1 {
+            color: black !important;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="mulcam" class="hello" style="color: green;">Hello, Multicampus!</h1>
+    </div>
+
+</body>
+</html>
