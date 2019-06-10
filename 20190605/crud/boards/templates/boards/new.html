@@ -3,7 +3,8 @@
 {% block body %}
 <h1 class="text-center">NEW</h1>
 <hr>
-<form action="/boards/create/" method="GET">
+<form action="/boards/create/" method="POST">
+    {% csrf_token %}
     <label for="title">Title</label><br>
     <input type="text" name="title" id="title"><br>
     <label for="content">Content</label><br>
