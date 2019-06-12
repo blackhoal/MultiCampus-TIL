@@ -1,0 +1,14 @@
+{% extends 'boards/base.html' %}
+{% block body %}
+    <h1 class="text-center">EDIT</h1>
+    <hr>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="title">Title</label><br>
+        <input type="text" name="title" id="title" value="{{ board.title }}"><br>
+        <label for="content">Content</label><br>
+        <textarea name="content" id="content" cols="30" rows="10">{{ board.content }}</textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+    <a href="{% url 'boards:index' %}">[글 목록]</a>
+{% endblock %}
