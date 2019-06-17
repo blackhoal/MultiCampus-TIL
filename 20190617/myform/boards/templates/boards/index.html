@@ -1,0 +1,10 @@
+{% extends 'boards/base.html' %}
+{% block body %}
+    <h1>INDEX</h1>
+    <hr>
+    {% for board in boards %}
+        <p>글 번호: {{ board.pk }}</p>
+        <p>글 제목: {{ board.title }}</p>
+    {% endfor %}
+    <a href="{% url 'boards:create' %}">[글 작성]</a>
+{% endblock %}
