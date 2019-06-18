@@ -1,0 +1,15 @@
+{% extends 'movies/base.html' %}
+{% block body %}
+    <h1 class="text-center">20190617 실습</h1>
+    <a href="/movies/create/">새로운 영화 등록</a>
+    <hr>
+    {% for movie in movies %}
+        <a href="">{{ movie.title }}</a>
+<!--        <a href="/movies/{{ movie.pk }}/">영화 제목: {{ movie.title }}</a>-->
+        <p>평점: {{ movie.score }}</p>
+    {% endfor %}
+{% endblock %}
+<!-- /movies/ index.html 접근 URL-->
+<!-- DB의 모든 영화목록, title, score-->
+<!-- title 클릭 시 해당 영화 정보 조회 페이지로 이동-->
+<!-- 영화 목록 최상단에 새 영화 등록 링크 -> 클릭시 영화 정보 생성 Form 페이지로 이동-->
