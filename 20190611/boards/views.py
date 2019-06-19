@@ -19,7 +19,7 @@ def new(request):
 
 def detail(request, board_pk):
     board = Board.objects.get(pk=board_pk)
-    comments = Comment.objects.get(pk=board_pk)
+    comments = board.comment_set.all()
     context = {'board':board, 'comments':comments}
     return render(request, 'boards/detail.html', context)
 
@@ -53,3 +53,21 @@ def comments_create(request, board_pk):
         return redirect('boards:detail', board.pk)
     else:
         return redirect('boards:detail', board.pk)
+
+def comments_edit(request, board_pk, comment_pk):
+    comment = Comment.objects.get(pk=comment_pk)
+    if request.method == 'POST':
+        comment.content = request.POST.get('content')
+        comment.save()
+        return redirect('boards:detail', board_pk)
+    else:
+        context = {'comment': comment}
+        return render(request, 'boards/comments_edit.html', context)
+
+def comments_delete(request, board_pk, comment_pk):
+    comment = Comment.objects.get(pk=comment_pk)
+    if request.method == 'POST':
+        comment.delete()
+        return redirect('boards:detail', board_pk)
+    else:
+        return redirect('boards:detail', board_pk)

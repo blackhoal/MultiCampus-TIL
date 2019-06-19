@@ -6,7 +6,9 @@
 {% for board in boards %}
     <p>글 번호: {{ board.pk }}</p>
     <p>글 제목: {{ board.title }}</p>
-    <a href="/boards/{{ board.pk }}/">[글 상태]</a>
+    <!-- <a href="/boards/{{ board.pk }}/">[글 상태]</a> -->
+    <a href="{% url 'detail' board.pk %}">[글 상태]</a>
+    <!-- 20190611 -->
     <hr>
 {% endfor %}
 <a href="/boards/new/">[글 작성]</a>

@@ -7,7 +7,7 @@ def new(request):
     return render(request, 'boards/new.html')
 
 def create(request):
-    title - request.POST.get('title')
+    title = request.POST.get('title')
     content = request.POST.get('content')
 
     board = Board()

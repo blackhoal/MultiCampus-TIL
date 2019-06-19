@@ -11,8 +11,8 @@ def new(request):
     if request.method == 'POST':
         title = request.POST.get('title')
         content = request.POST.get('content')
-
-        board = Board(title=title, content=content)
+        image = request.FILES.get('image')
+        board = Board(title=title, content=content, image=image)
         board.save()
         return redirect('create', board.pk)  # 20190611
     else:
@@ -20,7 +20,8 @@ def new(request):
 
 def detail(request, pk):
     board = Board.objects.get(pk=pk)
-    context = {'board': board}
+    comments = board.comment_set.all()
+    context = {'board': board, 'comments':comments}
     return render(request, 'boards/detail.html', context)
 
 def delete(request, pk):
@@ -36,6 +37,7 @@ def edit(request, pk):
     if request.method == "POST":
         board.title = request.POST.get('title')
         board.content = request.POST.get('content')
+        board.image = request.FILES.get('image') # 20190613 추가
         board.save()
         return redirect('boards:detail', board.pk)  # 20190611
     else:

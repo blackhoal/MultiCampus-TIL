@@ -8,7 +8,9 @@
     <p>글 작성 시각: {{ board.created_at }}</p>
     <p>글 수정 시각: {{ board.updated_at }}</p>
 
-    <a href="/boards/{{ board.pk }}/delete/">[글 삭제]</a><br>
-    <a href="/boards/{{ board.pk }}/edit/">[글 수정]</a><br>
-    <a href="/boards/">[메인 페이지]</a>
+    <!-- <a href="/boards/{{ board.pk }}/delete/">[글 삭제]</a><br> -->
+    <!-- <a href="/boards/{{ board.pk }}/edit/">[글 수정]</a><br> -->
+    <a href="{% url 'delete' board.pk %}">[글 삭제]</a><br>
+    <a href="{% url 'edit' board.pk %}">[글 수정]</a><br>
+    <a href="{% url 'index' %}">[메인 페이지]</a>
 {% endblock %}

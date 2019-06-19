@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
     <title>CRUD</title>
 </head>
 <body>
+    <img src="{% static 'turtle.jpg'%}" alt="turtle">
     <div class="container">
         {% block body %}
         {% endblock %}

@@ -13,7 +13,7 @@ def create(request):
     if request.method == 'POST':
         form = BoardForm(request.POST) # 20190617
         # embed() 주석처리 안할 경우 계속 해당 구문에서 멈춤
-        if form.is_valid(): # 유효성 검사 메소드
+        if form.is_valid(): # 유효성 검사 메소드 / form의 유효성이 False일 경우 25줄로 넘어간다
             title = form.cleaned_data.get('title') # 사용할 수 있는 형태로 정제 후 데이터를 딕셔너리 형태(form.cleaned_data - 딕셔너리)로 추출
             # title = request.POST.get('title')
             content = form.cleaned_data.get('content')
@@ -46,7 +46,7 @@ def update(request, board_pk):
         if form.is_valid():
             board.title = form.cleaned_data.get('title')
             board.content = form.cleaned_data.get('content')
-            board = Board.objects.set(title=title, content=content) # 쿼리 복잡 수행시간 늘어남
+            # board = Board.objects.set(title=title, content=content) # 쿼리 복잡 수행시간 늘어남
             board.save()
             return redirect('boards:detail', board_pk)
     else:

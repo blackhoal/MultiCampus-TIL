@@ -1,15 +1,16 @@
 {% extends 'boards/base.html' %}
-
+{% load static %}
 {% block body %}
-<h1 class="text-center">Boards</h1>
-<hr>
-{% for board in boards %}
-    <p>글 번호: {{ board.pk }}</p>
-    <p>글 제목: {{ board.title }}</p>
-    <!-- <a href="/boards/{{ board.pk }}/">[글 상태]</a> -->
-    <a href="{% url 'detail' board.pk %}">[글 상태]</a>
-    <!-- 20190611 -->
+    <h1 class="text-center">Boards</h1>
+    <img src="{% static 'boards/images/Pikachu.jpg' %}" alt="Pikachu">
     <hr>
-{% endfor %}
-<a href="/boards/new/">[글 작성]</a>
+    {% for board in boards %}
+        <p>글 번호: {{ board.pk }}</p>
+        <p>글 제목: {{ board.title }}</p>
+        <!-- <a href="/boards/{{ board.pk }}/">[글 상태]</a> -->
+        <a href="{% url 'detail' board.pk %}">[글 상태]</a>
+        <!-- 20190611 -->
+        <hr>
+    {% endfor %}
+    <a href="/boards/new/">[글 작성]</a>
 {% endblock %}

@@ -1,3 +1,4 @@
+{% load static %}
 {% extends 'boards/base.html' %}
 {% block body %}
     <h1 class="text-center">DETAIL</h1>
@@ -7,7 +8,14 @@
     <p>글 내용: {{ board.content }}</p>
     <p>글 작성 시각: {{ board.created_at }}</p>
     <p>글 수정 시각: {{ board.updated_at }}</p>
-
+    <hr>
+    {% if board.image == %}
+        <h3>원본 이미지</h3>
+            <img src="{{ board.image.url }}" alt="{{ board.image }}">
+        <h3>썸네일 이미지</h3>
+            <img src="{{ board.image_thumbnail.url }}" alt="{{ board.image_thumbnail }}">
+    {% endif %}
+    <hr>
     <!-- <a href="/boards/{{ board.pk }}/delete/">[글 삭제]</a><br> -->
     <!-- <a href="/boards/{{ board.pk }}/edit/">[글 수정]</a><br> -->
     <a href="{% url 'delete' board.pk %}">[글 삭제]</a><br>
