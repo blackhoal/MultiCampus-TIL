@@ -1,0 +1,25 @@
+{% extends 'boards/base.html' %}
+{% load bootstrap4 %}
+<!-- 20190618 -->
+{% block body %}
+
+{% if request.resolver_match.url_name == 'create' %}
+<!-- 20190618 -->
+    <h1>Create</h1>
+{% else %}
+    <h1>Update</h1>
+{% endif %}
+<hr>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form layout='horizontal' %}
+    {% bootstrap_button "글 작성" button_type='submit' button_class='btn-danger' %}
+<!-- 20190618 -->
+</form>
+{% if request.resolver_match.url_name == 'create' %}
+    <a href="{% url 'boards:index' %}" class="btn btn-primary">메인 페이지</a>
+{% else %}
+    <a href="{% url 'boards:detail' board.pk %}" class="btn btn-primary">글 상세보기</a>
+{% endif %}
+{% endblock %}
