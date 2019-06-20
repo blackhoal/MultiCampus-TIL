@@ -10,7 +10,7 @@ forms.py -> 모델 폼
 - $ python manage.py startapp onetomany
 modelrelation-settings.py의 INSTALLED_APPS에 등록(onetomany, django_extensions)
 
-![1](..\images\20190620\1.png)
+![1](.\images\1.png)
 
 - onetomany-models.py에서 3개의 클래스 정의(User, Board, Comment)
 ※ 유저 & 게시글, 유저 & 댓글, 게시글 & 댓글의 관계를 1 : N의 관계로 생성 
@@ -36,7 +36,7 @@ c7 = Comment.objects.create(content='!2글2댓글', user=user2, board=board2)
 - modelrelation-settings.py의 INSTALLED_APPS에 등록(manytomany)
 manytomany - models.py 클래스 정의(Doctor, Patient, Reservation)
 
-![2](..\images\20190620\2.png)
+![2](.\images\2.png)
 
 - $ python manage.py makemigrations
 - $ python manage.py migrate

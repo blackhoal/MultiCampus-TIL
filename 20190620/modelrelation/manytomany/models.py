@@ -9,7 +9,7 @@ class Doctor(models.Model):
 class Patient(models.Model):
     name = models.CharField(max_length=20)
     doctors = models.ManyToManyField(Doctor, related_name='patients')
-
+    # 테이블이 생성
     def __str__(self):
         return f'{self.id}번 환자 {self.name}'
 
